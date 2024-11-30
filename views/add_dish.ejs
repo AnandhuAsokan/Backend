@@ -1,0 +1,108 @@
+<%- include('./navbar') %>
+<div class="container" style="height: 100vh; width: 100vw">
+  <div class="row" style="position: relative; height: 100%; width: 100%">
+    <div
+      class="col-12"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 800px;
+      "
+    >
+      <form
+        action="/add_product"
+        class="form p-4 rounded shadow"
+        style="background-color: black"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <h3 class="text-center text-light mb-4">Add Product</h3>
+        <div class="">
+          <label for="temp" class="text-light">Upload Image</label>
+          <input
+            name="temp"
+            style="background-color: black"
+            type="file"
+            class="text-light"
+            id="temp"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="product_name" class="text-light">Name</label>
+          <input
+            name="Product_name"
+            style="background-color: black; border: 1px solid white"
+            type="text"
+            class="form-control text-light"
+            id="product_name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="category" class="text-light">Category</label>
+          <select
+            name="Category"
+            style="background-color: black; border: 1px solid white"
+            class="form-control text-light"
+            id="category"
+            required
+          >
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="fasions">Fasions</option>
+            <option value="electronics">Electronics</option>
+            <option value="grocery">Grocery</option>
+            <option value="medicines">Medicines</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="price" class="text-light">Price</label>
+          <input
+            name="Price"
+            style="background-color: black; border: 1px solid white"
+            type="text"
+            class="form-control text-light"
+            id="price"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description" class="text-light">Description</label>
+          <textarea
+            name="Description"
+            style="background-color: black; border: 1px solid white"
+            type="text"
+            class="form-control text-light"
+            id="description"
+            required
+          ></textarea>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-outline-light mt-3"
+            style="width: 30%"
+          >
+            Submit
+          </button>
+
+          <button
+            type="reset"
+            class="btn btn-outline-light mt-3"
+            style="width: 30%"
+          >
+            Reset
+          </button>
+        </div>
+        <div>
+          <% if(error) { %>
+          <p class="text-light"><%=error%></p>
+          <%}%>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<%- include('./navbar') %>
+<div class="container" style="height: 100vh; width: 100vw">
+    <div class="row" style="position: relative; height: 100%; width: 100%">
+      <div
+        class="col-12"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 800px;
+        "
+      >
+    <h1 class="text-center text-light mb-4">Edit Discount and GST details for <%= category %></h1>
+    <form action="/updateData/<%= price._id %>?category=<%= category %>" class="form  p-4 rounded shadow" method="POST">
+      <div class="form-group">
+        <label for="Discount" class="text-light">Discount (%)</label>
+        <input class="form-control"
+          type="number"
+          id="Discount"
+          name="Discount"
+          value="<%= discount %>"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label class="text-light" for="gst">GST (%)</label>
+        <input class="form-control"
+          type="number"
+          id="GST"
+          name="GST"
+          value="<%= gst %>"
+          required
+        />
+      </div>
+      <div class="form-group">
+      <button class="btn btn-outline-light" type="submit">Update</button>
+    </div>
+    </form>
+  </div>
+  </div>
+</div>

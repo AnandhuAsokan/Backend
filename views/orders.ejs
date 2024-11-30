@@ -1,0 +1,38 @@
+<%- include('./navbar') %>
+<div class="container" style="height: 100vh; width: 100vw">
+  <div class="row" style="position: relative; height: 100%; width: 100%">
+    <div
+      class="col-12"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 800px;
+      "
+    >
+      <table
+        class="table text-light table-bordered table-striped "
+        id="price-table"
+      >
+        <thead class="thead-dark">
+          <tr>
+            <th>User Name</th>
+            <th>Product Name</th>
+            <th>Ordered Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% combinedData.map(data => { %> 
+          <tr>
+            <td><%= data.user_name %></td>
+            <td><%= data.product_name %></td>
+            <td><%= data.date %></td>
+            
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

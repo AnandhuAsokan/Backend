@@ -1,0 +1,48 @@
+<%- include('./navbar') %>
+<div class="container" style="height: 100vh; width: 100vw">
+  <div class="row" style="position: relative; height: 100%; width: 100%">
+    <div
+      class="col-12"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 800px;
+      "
+    >
+      <table
+        class="table text-light table-bordered table-striped "
+        id="price-table"
+      >
+        <thead class="thead-dark">
+          <tr>
+            <th>Category</th>
+            <th>Discount (%)</th>
+            <th>GST (%)</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% prices.forEach(price => { %> <%
+          Object.keys(price.Discount).forEach(category => { %>
+          <tr>
+            <td><%= category.charAt(0).toUpperCase() + category.slice(1) %></td>
+            <td><%= price.Discount[category] %></td>
+            <td><%= price.GST[category] %></td>
+            <td>
+              <a
+                href="updateData/<%= price._id %>?category=<%= category %>"
+                value="edit"
+                type="submit"
+              >
+                Edit
+              </a>
+            </td>
+          </tr>
+          <% }); %> <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

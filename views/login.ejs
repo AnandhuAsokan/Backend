@@ -1,0 +1,28 @@
+
+
+<div class="container" style="height: 100vh; width: 100vw; ">
+    <div class="row" style="position: relative; height: 100%; width: 100%;">
+      <div class="col-12" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 800px;">
+        <form action="/" class="form  p-4 rounded shadow" style="background-color: black;" method="post">
+          <h3 class="text-center text-light mb-4">Login</h3>
+          <div class="form-group">
+            <label for="email" class="text-light">Email Id</label>
+            <input name="email" style="background-color: black; border: 1px solid white;" type="email" class="form-control text-light" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password" class="text-light">Password</label>
+            <input name="password" style="background-color: black; border: 1px solid white;" type="password" class="form-control text-light" id="password" required />
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-light mt-3" style="width: 30%;">Submit</button>
+          </div>
+          
+          <div>
+            <% if(error) { %>
+              <p class="text-light"><%=error%></p>
+              <%}%>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
